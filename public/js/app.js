@@ -79615,6 +79615,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 params: { label: this.label, sale: this.sale, realtime: this.realtime }
             }).then(function (response) {
 
+                //Тут он принимает данные из респонса, когда не стоит галочка принимать из редиса
                 _this.data = response.data;
                 _this.id++;
             });

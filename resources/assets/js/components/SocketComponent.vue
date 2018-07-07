@@ -45,6 +45,7 @@
                     params: { label: this.label, sale: this.sale, realtime: this.realtime }
                 }).then((response)=>{
 
+                    //Тут он принимает данные из респонса, когда не стоит галочка принимать из редиса
                     this.data = response.data;
                     this.id++
 

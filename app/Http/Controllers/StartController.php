@@ -73,6 +73,7 @@ class StartController extends Controller
             $result['datasets'][0]['data'][] = $request->input('sale');
         }
 
+        //Это для сокет-ио
         if ($request->has('realtime')){
             if ($request->input('realtime') == 'true'){
                 event(new newEvent($result));
@@ -80,6 +81,7 @@ class StartController extends Controller
             }
         }
 
+        //Это для аякс запроса
         return $result;
 
     }
