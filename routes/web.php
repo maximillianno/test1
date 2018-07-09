@@ -22,3 +22,4 @@ Route::get('/start', 'StartController@index')->name('start');
 Route::get('/start/get-json', 'StartController@getJson')->name('getJson');
 Route::get('/start/data-chart', 'StartController@dataChart')->name('dataChart');
 Route::get('/start/socket-io', 'StartController@newEvent');
+Route::get('/start/socket-chat', 'StartController@sendMessage');

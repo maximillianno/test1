@@ -11,7 +11,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h2 class="text-center">Text #1</h2>
-                                    <socket-component></socket-component>
+                                    <socketchat-component></socketchat-component>
                                 </div>
                             </div>
                         </div>

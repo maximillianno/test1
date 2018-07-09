@@ -35,7 +35,8 @@
             socket.on("news-action:App\\Events\\NewEvent", function (data) {
                 this.data = data.result
             }.bind(this));
-            // this.update();
+            //чтобы не было пусто при открытии
+            this.update();
         },
         methods:{
             sendData: function () {
