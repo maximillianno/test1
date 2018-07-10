@@ -89377,6 +89377,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -89391,14 +89394,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
         };
     },
-    props: ['users', 'user'],
+    props: [
+    //массив объектов
+    'users',
+    //авторизованный - модель
+    'user'],
     created: function created() {
         var socket = io('http://localhost:3000');
         socket.on("news-action." + this.user.id + ":App\\Events\\PrivateMessage", function (data) {
-            this.datamessages.push(data.message.user + ': ' + data.message.message);
+
+            this.datamessages.push(data.messageFromEvent.user + ': ' + data.messageFromEvent.message);
         }.bind(this));
         socket.on("news-action.:App\\Events\\PrivateMessage", function (data) {
-            this.datamessages.push(data.message.user + ': ' + data.message.message);
+            this.datamessages.push(data.messageFromEvent.user + ': ' + data.messageFromEvent.message);
         }.bind(this));
         //чтобы не было пусто при открытии
 
@@ -89418,8 +89426,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 params: { channels: this.usersSelect, message: this.message, user: this.user.email }
             }).then(function (response) {
 
-                //Тут он добавляет из респонса
-                // this.datamessages.push(this.user.email + ':' + this.message);
+                //Тут он добавляет из респонса ТОЛЬКО  ЛИЧНОЕ СООБЩЕНИЯ
+                if (_this.usersSelect[0] != 'news-action.') {
+                    _this.datamessages.push(_this.user.email + ':' + _this.message);
+                }
+
                 _this.message = "";
             });
         }
@@ -89436,112 +89447,108 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-sm-12" }, [
-        _c("div", { staticClass: "row form-group" }, [
-          _c("div", { staticClass: "col-sm-4" }, [
-            _c(
-              "select",
-              {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.usersSelect,
-                    expression: "usersSelect"
-                  }
-                ],
-                staticClass: "form-control",
-                attrs: { multiple: "multiple" },
-                on: {
-                  change: function($event) {
-                    var $$selectedVal = Array.prototype.filter
-                      .call($event.target.options, function(o) {
-                        return o.selected
-                      })
-                      .map(function(o) {
-                        var val = "_value" in o ? o._value : o.value
-                        return val
-                      })
-                    _vm.usersSelect = $event.target.multiple
-                      ? $$selectedVal
-                      : $$selectedVal[0]
-                  }
-                }
-              },
-              _vm._l(_vm.users, function(user) {
-                return _c(
-                  "option",
-                  { domProps: { value: "news-action." + user.id } },
-                  [
-                    _vm._v(
-                      "\n                            " +
-                        _vm._s(user.email) +
-                        "\n                        "
-                    )
-                  ]
-                )
-              })
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-sm-8" }, [
-            _c("textarea", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.datamessages.join("\n"),
-                  expression: "datamessages.join('\\n')"
-                }
-              ],
-              attrs: { name: "", id: "", rows: "6" },
-              domProps: { value: _vm.datamessages.join("\n") },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.datamessages, "join('\n')", $event.target.value)
-                }
-              }
-            })
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("input", {
+    _c("div", { staticClass: "row form-group" }, [
+      _c("div", { staticClass: "col-sm-4" }, [
+        _c(
+          "select",
+          {
             directives: [
               {
                 name: "model",
                 rawName: "v-model",
-                value: _vm.message,
-                expression: "message"
+                value: _vm.usersSelect,
+                expression: "usersSelect"
               }
             ],
             staticClass: "form-control",
-            attrs: { type: "text" },
-            domProps: { value: _vm.message },
+            attrs: { multiple: "multiple" },
             on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.message = $event.target.value
+              change: function($event) {
+                var $$selectedVal = Array.prototype.filter
+                  .call($event.target.options, function(o) {
+                    return o.selected
+                  })
+                  .map(function(o) {
+                    var val = "_value" in o ? o._value : o.value
+                    return val
+                  })
+                _vm.usersSelect = $event.target.multiple
+                  ? $$selectedVal
+                  : $$selectedVal[0]
               }
             }
-          }),
-          _vm._v(" "),
-          _c(
-            "button",
+          },
+          _vm._l(_vm.users, function(user) {
+            return _c(
+              "option",
+              { domProps: { value: "news-action." + user.id } },
+              [
+                _vm._v(
+                  "\n                            " +
+                    _vm._s(user.email) +
+                    "\n                        "
+                )
+              ]
+            )
+          })
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-sm-8" }, [
+        _c("textarea", {
+          directives: [
             {
-              staticClass: "btn btn-default text mb-1",
-              on: { click: _vm.sendMessage }
-            },
-            [_vm._v("Отправить")]
-          )
-        ])
+              name: "model",
+              rawName: "v-model",
+              value: _vm.datamessages.join("\n"),
+              expression: "datamessages.join('\\n')"
+            }
+          ],
+          attrs: { name: "", id: "", cols: "60", rows: "8" },
+          domProps: { value: _vm.datamessages.join("\n") },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.$set(_vm.datamessages, "join('\n')", $event.target.value)
+            }
+          }
+        })
       ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "form-group" }, [
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.message,
+            expression: "message"
+          }
+        ],
+        staticClass: "form-control",
+        attrs: { type: "text" },
+        domProps: { value: _vm.message },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.message = $event.target.value
+          }
+        }
+      }),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-default text mb-1",
+          on: { click: _vm.sendMessage }
+        },
+        [_vm._v("Отправить")]
+      )
     ])
   ])
 }

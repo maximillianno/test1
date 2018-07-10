@@ -14,7 +14,7 @@ class PrivateMessage implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public $message;
+    public $messageFromEvent;
 
     /**
      * Create a new event instance.
@@ -24,7 +24,7 @@ class PrivateMessage implements ShouldBroadcast
     public function __construct($data)
     {
         //
-        $this->message = $data;
+        $this->messageFromEvent = $data;
     }
 
     /**
@@ -35,6 +35,6 @@ class PrivateMessage implements ShouldBroadcast
     public function broadcastOn()
     {
         //return new PrivateChannel('channel-name');
-        return $this->message['channels'];
+        return $this->messageFromEvent['channels'];
     }
 }
