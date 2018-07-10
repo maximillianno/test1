@@ -5069,20 +5069,6 @@ module.exports = Element;
 
 /***/ }),
 /* 6 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = {};
-module.exports.Arc = __webpack_require__(249);
-module.exports.Line = __webpack_require__(250);
-module.exports.Point = __webpack_require__(251);
-module.exports.Rectangle = __webpack_require__(252);
-
-
-/***/ }),
-/* 7 */
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -5188,6 +5174,20 @@ module.exports = function normalizeComponent (
     options: options
   }
 }
+
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = {};
+module.exports.Arc = __webpack_require__(249);
+module.exports.Line = __webpack_require__(250);
+module.exports.Point = __webpack_require__(251);
+module.exports.Rectangle = __webpack_require__(252);
 
 
 /***/ }),
@@ -36401,7 +36401,7 @@ module.exports = {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(173);
-module.exports = __webpack_require__(297);
+module.exports = __webpack_require__(300);
 
 
 /***/ }),
@@ -36431,7 +36431,8 @@ Vue.component('ajax-component', __webpack_require__(232));
 Vue.component('chartline-component', __webpack_require__(235));
 Vue.component('chartpie-component', __webpack_require__(287));
 Vue.component('socket-component', __webpack_require__(291));
-Vue.component('socketchat-component', __webpack_require__(294));
+Vue.component('socket-chat-component', __webpack_require__(294));
+Vue.component('socket-private-component', __webpack_require__(297));
 
 var app = new Vue({
   el: '#app'
@@ -75345,7 +75346,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(7)
+var normalizeComponent = __webpack_require__(6)
 /* script */
 var __vue_script__ = __webpack_require__(227)
 /* template */
@@ -75464,7 +75465,7 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(7)
+var normalizeComponent = __webpack_require__(6)
 /* script */
 var __vue_script__ = __webpack_require__(230)
 /* template */
@@ -75607,7 +75608,7 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(7)
+var normalizeComponent = __webpack_require__(6)
 /* script */
 var __vue_script__ = __webpack_require__(233)
 /* template */
@@ -75782,7 +75783,7 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(7)
+var normalizeComponent = __webpack_require__(6)
 /* script */
 var __vue_script__ = __webpack_require__(236)
 /* template */
@@ -76087,7 +76088,7 @@ __webpack_require__(244)(Chart);
 
 Chart.defaults = __webpack_require__(2);
 Chart.Element = __webpack_require__(5);
-Chart.elements = __webpack_require__(6);
+Chart.elements = __webpack_require__(7);
 Chart.Interaction = __webpack_require__(46);
 Chart.layouts = __webpack_require__(11);
 Chart.platform = __webpack_require__(47);
@@ -85583,7 +85584,7 @@ webpackContext.id = 267;
 
 
 var defaults = __webpack_require__(2);
-var elements = __webpack_require__(6);
+var elements = __webpack_require__(7);
 var helpers = __webpack_require__(1);
 
 defaults._set('bar', {
@@ -86094,7 +86095,7 @@ module.exports = function(Chart) {
 
 
 var defaults = __webpack_require__(2);
-var elements = __webpack_require__(6);
+var elements = __webpack_require__(7);
 var helpers = __webpack_require__(1);
 
 defaults._set('bubble', {
@@ -86281,7 +86282,7 @@ module.exports = function(Chart) {
 
 
 var defaults = __webpack_require__(2);
-var elements = __webpack_require__(6);
+var elements = __webpack_require__(7);
 var helpers = __webpack_require__(1);
 
 defaults._set('doughnut', {
@@ -86587,7 +86588,7 @@ module.exports = function(Chart) {
 
 
 var defaults = __webpack_require__(2);
-var elements = __webpack_require__(6);
+var elements = __webpack_require__(7);
 var helpers = __webpack_require__(1);
 
 defaults._set('line', {
@@ -86927,7 +86928,7 @@ module.exports = function(Chart) {
 
 
 var defaults = __webpack_require__(2);
-var elements = __webpack_require__(6);
+var elements = __webpack_require__(7);
 var helpers = __webpack_require__(1);
 
 defaults._set('polarArea', {
@@ -87156,7 +87157,7 @@ module.exports = function(Chart) {
 
 
 var defaults = __webpack_require__(2);
-var elements = __webpack_require__(6);
+var elements = __webpack_require__(7);
 var helpers = __webpack_require__(1);
 
 defaults._set('radar', {
@@ -87521,7 +87522,7 @@ module.exports.title = __webpack_require__(285);
 
 
 var defaults = __webpack_require__(2);
-var elements = __webpack_require__(6);
+var elements = __webpack_require__(7);
 var helpers = __webpack_require__(1);
 
 defaults._set('global', {
@@ -88722,7 +88723,7 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(7)
+var normalizeComponent = __webpack_require__(6)
 /* script */
 var __vue_script__ = __webpack_require__(288)
 /* template */
@@ -88867,7 +88868,7 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(7)
+var normalizeComponent = __webpack_require__(6)
 /* script */
 var __vue_script__ = __webpack_require__(292)
 /* template */
@@ -89114,7 +89115,7 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(7)
+var normalizeComponent = __webpack_require__(6)
 /* script */
 var __vue_script__ = __webpack_require__(295)
 /* template */
@@ -89293,6 +89294,267 @@ if (false) {
 
 /***/ }),
 /* 297 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(6)
+/* script */
+var __vue_script__ = __webpack_require__(298)
+/* template */
+var __vue_template__ = __webpack_require__(299)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\SocketPrivateComponent.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-be4d83f8", Component.options)
+  } else {
+    hotAPI.reload("data-v-be4d83f8", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 298 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+
+    data: function data() {
+        return {
+            datamessages: [],
+            message: "",
+            usersSelect: []
+
+        };
+    },
+    props: ['users', 'user'],
+    created: function created() {
+        var socket = io('http://localhost:3000');
+        socket.on("news-action." + this.user.id + ":App\\Events\\PrivateMessage", function (data) {
+            this.datamessages.push(data.message.user + ': ' + data.message.message);
+        }.bind(this));
+        socket.on("news-action.:App\\Events\\PrivateMessage", function (data) {
+            this.datamessages.push(data.message.user + ': ' + data.message.message);
+        }.bind(this));
+        //чтобы не было пусто при открытии
+
+    },
+
+    methods: {
+        sendMessage: function sendMessage() {
+            var _this = this;
+
+            if (!this.usersSelect.length) {
+                this.usersSelect.push('news-action.');
+            }
+
+            axios({
+                method: 'get',
+                url: '/start/socket-private',
+                params: { channels: this.usersSelect, message: this.message, user: this.user.email }
+            }).then(function (response) {
+
+                //Тут он принимает данные из респонса, когда не стоит галочка принимать из редиса
+                _this.datamessages.push(_this.user.email + ':' + _this.message);
+                app.message = "";
+            });
+        }
+
+    }
+});
+
+/***/ }),
+/* 299 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-sm-12" }, [
+        _c("div", { staticClass: "row form-group" }, [
+          _c("div", { staticClass: "col-sm-4" }, [
+            _c(
+              "select",
+              {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.usersSelect,
+                    expression: "usersSelect"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: { multiple: "multiple" },
+                on: {
+                  change: function($event) {
+                    var $$selectedVal = Array.prototype.filter
+                      .call($event.target.options, function(o) {
+                        return o.selected
+                      })
+                      .map(function(o) {
+                        var val = "_value" in o ? o._value : o.value
+                        return val
+                      })
+                    _vm.usersSelect = $event.target.multiple
+                      ? $$selectedVal
+                      : $$selectedVal[0]
+                  }
+                }
+              },
+              _vm._l(_vm.users, function(user) {
+                return _c(
+                  "option",
+                  { domProps: { value: "news-action." + user.id } },
+                  [
+                    _vm._v(
+                      "\n                            " +
+                        _vm._s(user.email) +
+                        "\n                        "
+                    )
+                  ]
+                )
+              })
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-sm-8" }, [
+            _c("textarea", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.datamessages.join("\n"),
+                  expression: "datamessages.join('\\n')"
+                }
+              ],
+              attrs: { name: "", id: "", rows: "6" },
+              domProps: { value: _vm.datamessages.join("\n") },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.datamessages, "join('\n')", $event.target.value)
+                }
+              }
+            })
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.message,
+                expression: "message"
+              }
+            ],
+            staticClass: "form-control",
+            attrs: { type: "text" },
+            domProps: { value: _vm.message },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.message = $event.target.value
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-default text mb-1",
+              on: { click: _vm.sendMessage }
+            },
+            [_vm._v("Отправить")]
+          )
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-be4d83f8", module.exports)
+  }
+}
+
+/***/ }),
+/* 300 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

@@ -11,7 +11,12 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h2 class="text-center">Text #1</h2>
-                                    <socketchat-component></socketchat-component>
+                                    @if(Auth::check())
+                                        <h4 class="text-center">Пользователь {{ Auth::user()->email }}</h4>
+                                        <socket-private-component :users="{{ json_encode(App\User::select('email', 'id')->where('id', '!=', Auth::id())->get()) }}" :user="{{ Auth::user() }}"></socket-private-component>
+                                    @endif
+                                    {{--<prop-component :urldata="{{ json_encode($url_data) }}"></prop-component>--}}
+
                                 </div>
                             </div>
                         </div>
@@ -32,3 +37,9 @@
     </div>
 </div>
 @endsection
+{{--<script>--}}
+    {{--import SocketChatComponent from "../assets/js/components/SocketChatComponent";--}}
+    {{--export default {--}}
+        {{--components: {SocketChatComponent}--}}
+    {{--}--}}
+{{--</script>--}}
