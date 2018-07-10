@@ -89383,8 +89383,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     data: function data() {
         return {
+            //Массив сообщений
             datamessages: [],
             message: "",
+            //Пользователи для отправки
             usersSelect: []
 
         };
@@ -89416,9 +89418,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 params: { channels: this.usersSelect, message: this.message, user: this.user.email }
             }).then(function (response) {
 
-                //Тут он принимает данные из респонса, когда не стоит галочка принимать из редиса
-                _this.datamessages.push(_this.user.email + ':' + _this.message);
-                app.message = "";
+                //Тут он добавляет из респонса
+                // this.datamessages.push(this.user.email + ':' + this.message);
+                _this.message = "";
             });
         }
 

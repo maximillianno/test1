@@ -36,8 +36,10 @@
 
         data: function(){
             return {
+                //Массив сообщений
                 datamessages: [],
                 message: "",
+                //Пользователи для отправки
                 usersSelect: [],
 
 
@@ -73,9 +75,9 @@
                     params: { channels: this.usersSelect, message: this.message, user: this.user.email }
                 }).then((response)=>{
 
-                    //Тут он принимает данные из респонса, когда не стоит галочка принимать из редиса
-                    this.datamessages.push(this.user.email + ':' + this.message);
-                    app.message = "";
+                    //Тут он добавляет из респонса
+                    // this.datamessages.push(this.user.email + ':' + this.message);
+                    this.message = "";
 
                 });
             },
